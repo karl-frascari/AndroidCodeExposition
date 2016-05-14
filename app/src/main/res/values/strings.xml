@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Meu aplicativo</string>
-    <string name="lbl_name">Digite seu nome:</string>
-    <string name="btn_start">Iniciar</string>
-    <string name="btn_stop">Parar</string>
-</resources>
