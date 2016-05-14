@@ -18,7 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FragmentsActivity"></activity>
+        <activity android:name=".FragmentsActivity" />
+        <activity android:name=".CanvasActivity" />
+        <activity android:name=".Activity_A" />
+        <activity android:name=".Activity_B" />
+        <activity android:name=".Activity_C"></activity>
     </application>
 
 </manifest>

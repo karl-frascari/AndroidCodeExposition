@@ -89,9 +89,19 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_canvas) {
 
+            Intent intent = new Intent(this, CanvasActivity.class);
+
+            startActivity(intent);
+
         } else if (id == R.id.nav_activity) {
 
+
+
         } else if (id == R.id.nav_backstack) {
+
+            Intent intent = new Intent(this, Activity_A.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
 
         } else if (id == R.id.nav_broadcast) {
 
