@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_fragments"
+            android:icon="@drawable/penguin"
+            android:title="Fragments" />
+        <item
+            android:id="@+id/nav_canvas"
+            android:icon="@drawable/capsule"
+            android:title="Canvas" />
+        <item
+            android:id="@+id/nav_activity"
+            android:icon="@drawable/ice"
+            android:title="Activity" />
+        <item
+            android:id="@+id/nav_backstack"
+            android:icon="@drawable/minecraft"
+            android:title="Backstack" />
+    </group>
+
+    <item android:title="Next">
+        <menu>
+            <item
+                android:id="@+id/nav_broadcast"
+                android:icon="@drawable/homeicon"
+                android:title="Broadcast Receiver" />
+            <item
+                android:id="@+id/nav_services"
+                android:icon="@drawable/instagram"
+                android:title="Services" />
+        </menu>
+    </item>
+
+</menu>
