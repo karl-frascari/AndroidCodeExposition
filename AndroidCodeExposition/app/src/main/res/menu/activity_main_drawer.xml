@@ -18,7 +18,14 @@
             android:id="@+id/nav_backstack"
             android:icon="@drawable/minecraft"
             android:title="Backstack" />
+
+        <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/minecraft"
+            android:title="Login" />
     </group>
+
+
 
     <item android:title="Next">
         <menu>

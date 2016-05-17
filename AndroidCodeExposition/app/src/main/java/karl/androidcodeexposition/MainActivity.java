@@ -95,8 +95,6 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_activity) {
 
-
-
         } else if (id == R.id.nav_backstack) {
 
             Intent intent = new Intent(this, Activity_A.class);
@@ -107,6 +105,9 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_services) {
 
+        }else if(id == R.id.nav_login){
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
