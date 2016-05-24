@@ -26,9 +26,6 @@
     </group>
 
 
-
-    <item android:title="Next">
-        <menu>
             <item
                 android:id="@+id/nav_broadcast"
                 android:icon="@drawable/homeicon"
@@ -37,7 +34,18 @@
                 android:id="@+id/nav_services"
                 android:icon="@drawable/instagram"
                 android:title="Services" />
-        </menu>
-    </item>
 
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_alarm"
+            android:icon="@drawable/ice"
+            android:title="Alarm" />
+
+        <item
+            android:id="@+id/nav_binded_services"
+            android:icon="@drawable/instagram"
+            android:title="Binded Services" />
+
+    </group>
 </menu>

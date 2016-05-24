@@ -33,7 +33,24 @@
             android:label="@string/title_activity_login" />
         <activity android:name=".ProcessLoginActivity" />
         <activity android:name=".OlimipiadasHomeActivity" />
-        <activity android:name=".OlimipiadasConfirmationActivity"></activity>
+        <activity android:name=".OlimipiadasConfirmationActivity" />
+        <activity android:name=".AlarmActivity" />
+
+        <receiver android:name=".AlarmReceiver" />
+
+        <activity android:name=".ServiceActivity" />
+
+        <service
+            android:name=".TesteService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".BoundActivity" />
+
+        <service
+            android:name=".BoundService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

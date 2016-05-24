@@ -104,9 +104,16 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_broadcast) {
 
         } else if (id == R.id.nav_services) {
-
+            Intent intent = new Intent(this, ServiceActivity.class);
+            startActivity(intent);
         }else if(id == R.id.nav_login){
             Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }else if(id == R.id.nav_alarm){
+            Intent intent = new Intent(this, AlarmActivity.class);
+            startActivity(intent);
+        }else if(id == R.id.nav_binded_services){
+            Intent intent = new Intent(this, BoundActivity.class);
             startActivity(intent);
         }
 
