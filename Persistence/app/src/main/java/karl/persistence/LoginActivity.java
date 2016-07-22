@@ -3,6 +3,9 @@ package karl.persistence;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -26,6 +29,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -39,53 +43,44 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class LoginActivity extends AppCompatActivity {
 
-    // UI references.
-    private AutoCompleteTextView mEmailView;
-    private EditText mPasswordView;
-    private View mProgressView;
-    private View mLoginFormView;
+    private SharedPreferences sp;
+    private String usuario;
+    private String senha;
+    private AutoCompleteTextView email;
+    private EditText password;
+    private CheckBox keepConected;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
-        mPasswordView = (EditText) findViewById(R.id.password);
-
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
-        mEmailSignInButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                attemptLogin();
-            }
-        });
-
-        mLoginFormView = findViewById(R.id.login_form);
-        mProgressView = findViewById(R.id.login_progress);
-
+        email = (AutoCompleteTextView)  findViewById(R.id.email);
+        password = (EditText)  findViewById(R.id.password);
         sp = getPreferences(MODE_PRIVATE);
 
         usuario = sp.getString("sp_usuario", null);
+        senha = sp.getString("sp_senha", null);
 
         if(usuario != null){
-            mPasswordView.setText(sp.getString("sp_senha"), null);
+            email.setText(usuario);
+            password.setText(senha);
         }
     }
 
+    protected void login(View v){
 
+        email = (AutoCompleteTextView)  findViewById(R.id.email);
+        password = (EditText)  findViewById(R.id.password);
+        keepConected = (CheckBox) findViewById(R.id.cbx_keep_conected);
 
-
-    private void attemptLogin() {
-
+        if(keepConected.isChecked()){
+            SharedPreferences sp = getPreferences(MODE_PRIVATE);
+            SharedPreferences.Editor e = sp.edit();
+            e.putString("sp_usuario", email.getText().toString());
+            e.putString("sp_senha", password.getText().toString());
+            e.commit();
+        }
     }
-
-    private boolean isEmailValid(String email) {
-        //TODO: Replace this with your own logic
-        return email.contains("@");
-    }
-
-
-
 }
 
